@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/MEDODS/dist/precache-manifest.910a7bc73dd732b9b44ff3031ed95fa9.js"
+  "/precache-manifest.f374cace3d5eeeb99514f7b553927265.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "vue-med-form"});
+workbox.core.setCacheNameDetails({prefix: "vue-form"});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
