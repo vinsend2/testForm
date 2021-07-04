@@ -2,8 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link>
-      <router-link to="/new-client">New client</router-link>
-      <router-link to="/simon-say">Simon Say</router-link>
+      <router-link to="/form">New client</router-link>
+      <router-link to="/simon-say">Simon Says</router-link>
     </div>
     <router-view/>
   </div>
@@ -11,7 +11,7 @@
 
 <style lang="scss">
 body {
-    background-image: url("./assets/image/background2.jpg");
+  background-image: url("./assets/image/background2.jpg");
   background-repeat: no-repeat;
   background-position: 50%;
   background-clip: border-box;
@@ -19,11 +19,8 @@ body {
   background-attachment: fixed;
   padding-bottom: 20px;
   }
-#app {
-  
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#app {  
+  font-family: Helvetica, Arial, sans-serif;
   color: #2c3e50;
 }
 

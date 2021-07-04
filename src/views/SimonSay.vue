@@ -126,6 +126,8 @@ export default {
 .helper-text {
   display: block;
   margin-bottom: 15px;
+  text-align: center;
+  font-size: 20px;
 }
 .flex-row {
   display: flex;
@@ -141,8 +143,7 @@ export default {
   width: 5em;
   border: none;
   padding: 0.3em 0.6em;
-  font-size: 1.4em;
-  -webkit-border-radius: 10px 10px 10px 10px;
+  font-size: 1.4em;  
   border-radius: 10px 10px 10px 10px;
   margin: 20px 0;
 }
@@ -150,4 +151,9 @@ export default {
   font-size: 1.4em;
   font-weight: bold;
 }
+@media (max-width: 768px) {
+.flex-row {
+  flex-direction: column;
+}
+  }
 </style>
