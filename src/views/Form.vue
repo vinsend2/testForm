@@ -276,7 +276,7 @@ export default {
   methods: {
     submitHandler() {
       if (this.$v.form.$invalid) {
-        this.$v.form.touch();
+        this.$v.form.$touch();
         return;
       }
 
@@ -359,13 +359,17 @@ export default {
   }
 
   input,
-  select {
-    border: none;
-    padding: 8px 15px;
-    background: rgb(238, 238, 238);
-    margin-bottom: 15px;
-    border-radius: 9px;
+  select {    
+    padding: 8px 15px;   
+    margin-bottom: 15px;    
     overflow: hidden;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;    
+    outline: none;    
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: box-shadow .3s,border .3s;
 
     &:focus {
       outline: none;
