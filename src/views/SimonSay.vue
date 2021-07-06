@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <h2 class="game-title">Simon Says</h2>
     <div class="flex-row">
       <div class="flex--item">
@@ -22,10 +22,9 @@
 <script>
 import Simon from "./components/Simon";
 import GameMode from "./components/GameMode";
-import one from "../assets/audio/sounds_1.mp3";
-import two from "../assets/audio/sounds_2.mp3";
-import three from "../assets/audio/sounds_3.mp3";
-import four from "../assets/audio/sounds_4.mp3";
+
+import sounds from "../assets/audio/index.js";
+
 export default {
   name: "App",
   components: { Simon, GameMode },
@@ -44,8 +43,8 @@ export default {
       sounds: [],
     };
   },
-  mounted() {
-    let arr = [one, two, three, four];
+  mounted() {    
+    let arr = [sounds[0], sound[1], sounds[2], sounds[3]];
     for (let i = 0; i < 4; i++) {
       this.sounds.push(new Audio(arr[i]));
     }
@@ -81,13 +80,13 @@ export default {
             this.user = false;
             setTimeout(() => this.startSing(), 500);
           }
-        } else {
-          //when Lose
+        } else {          
           this.whenLouse();
         }
       }
     },
     whenLouse() {
+      //Что происходит при проигрыше
       let round = this.round;
       setTimeout(() => {
         alert(`Вы проиграли в раунде ${round}`);
@@ -99,13 +98,13 @@ export default {
       this.history = [];
       this.round = 1;
     },
-    light(value) {
+    light(value) { 
       this.active = value;
       setTimeout(() => {
         this.active = null;
       }, 200);
     },
-    playSound(index) {
+    playSound(index) { 
       this.light(index);
       let clone = this.sounds[index - 1].cloneNode(true);
       clone.play();
