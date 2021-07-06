@@ -23,7 +23,7 @@
 import Simon from "./components/Simon";
 import GameMode from "./components/GameMode";
 
-import sounds from "../assets/audio/index.js";
+import sounds2 from "../assets/audio/index.js";
 
 export default {
   name: "App",
@@ -43,8 +43,9 @@ export default {
       sounds: [],
     };
   },
-  mounted() {    
-    let arr = [sounds[0], sound[1], sounds[2], sounds[3]];
+  mounted() {   
+    console.log(sounds2); 
+    let arr = [sounds2[0], sounds2[1], sounds2[2], sounds2[3]];
     for (let i = 0; i < 4; i++) {
       this.sounds.push(new Audio(arr[i]));
     }
