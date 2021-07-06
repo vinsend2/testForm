@@ -99,7 +99,7 @@ export default {
     },
     playSound(index) { 
       this.light(index);
-      let clone = this.$options.sounds[index - 1].cloneNode(true)
+      let clone = new Audio(this.$options.sounds[index - 1]).cloneNode(true)
       clone.play();
     },
     changeDifficulty(value) {
