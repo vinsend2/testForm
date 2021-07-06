@@ -22,11 +22,11 @@
 <script>
 import Simon from "./components/Simon";
 import GameMode from "./components/GameMode";
-
-import sounds2 from "../assets/audio/index.js";
+import sounds from "../assets/audio";
 
 export default {
   name: "App",
+  sounds,
   components: { Simon, GameMode },
   data() {
     return {
@@ -40,21 +40,13 @@ export default {
       current: 0,
       difficulty: 1500,
       helper: "Нажмите старт!",
-      sounds: [],
     };
-  },
-  mounted() {   
-    console.log(sounds2); 
-    let arr = [sounds2[0], sounds2[1], sounds2[2], sounds2[3]];
-    for (let i = 0; i < 4; i++) {
-      this.sounds.push(new Audio(arr[i]));
-    }
   },
   methods: {
     startSing() {
       this.helper = "Слушайте ";
       this.button = true;
-      const random = Math.floor(Math.random() * 4) + 1;
+      const random = Math.floor(Math.random() * this.$options.sounds.length) + 1;
       this.history.push(random);
       this.current = 0;
       let idInterval = setInterval(() => {
@@ -82,11 +74,11 @@ export default {
             setTimeout(() => this.startSing(), 500);
           }
         } else {          
-          this.whenLouse();
+          this.Lose();
         }
       }
     },
-    whenLouse() {
+    Lose() {
       //Что происходит при проигрыше
       let round = this.round;
       setTimeout(() => {
@@ -107,7 +99,7 @@ export default {
     },
     playSound(index) { 
       this.light(index);
-      let clone = this.sounds[index - 1].cloneNode(true);
+      let clone = this.$options.sounds[index - 1].cloneNode(true)
       clone.play();
     },
     changeDifficulty(value) {

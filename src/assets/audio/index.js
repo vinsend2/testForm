@@ -1,6 +1,6 @@
-export default [
-    import ('./1.mp3'),
-    import ('./2.mp3'),
-    import ('./3.mp3'),
-    import ('./4.mp3')
+export default[
+    require('./1.mp3'),
+    require('./2.mp3'),
+    require('./3.mp3'),
+    require('./4.mp3')
 ]
